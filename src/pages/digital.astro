@@ -18,7 +18,7 @@ const projects = await getCollection("project");
       {
         projects.map((project) => (
           <li class="project">
-            <a href={`/${project.slug}/`}>
+            <a href={`/portfolio/${project.slug}/`}>
               <Window
                 extraClass="project__item"
                 website={true}
@@ -31,5 +31,4 @@ const projects = await getCollection("project");
       }
     </ul>
   </div>
- 
 </BaseLayout>
