@@ -1,5 +1,5 @@
 ---
-import Picture from "astro/components/Picture.astro";
+import { Picture } from "astro:assets";
 import logo from "../assets/logo/logo.svg";
 import Hamburger from "./Hamburger.astro";
 
@@ -37,7 +37,7 @@ console.log(currentPath);
     position: absolute;
     top: -30px;
     left: -30px;
-    transform: scale(.9);
+    transform: scale(0.9);
   }
 
   .nav__logo {
