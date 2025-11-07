@@ -1,0 +1,35 @@
+---
+import { getCollection } from "astro:content";
+import Window from "../components/elements/Window.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/digital.css";
+
+const projects = await getCollection("project");
+---
+
+<BaseLayout>
+  <div class="body__container">
+    <h2 class="digital__title">digital</h2>
+    <p>
+      A collection of my digitally created works. Ranging from fully coded
+      styled websites, creative coding projects to ux case studies.
+    </p>
+    <ul class="projects">
+      {
+        projects.map((project) => (
+          <li class="project">
+            <a href={`/${project.slug}/`}>
+              <Window
+                extraClass="project__item"
+                website={true}
+                title={project.data.title}
+                img={project.data.heroUrl}
+              />
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+ 
+</BaseLayout>

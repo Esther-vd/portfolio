@@ -1,0 +1,91 @@
+---
+import Picture from "astro/components/Picture.astro";
+import WindowTopbar from "./WindowTopbar.astro";
+const { title, img, link, linkWidth, linkHeight, website, extraClass } =
+  Astro.props;
+---
+
+<style>
+  /* window style */
+  .window {
+    display: block;
+    width: fit-content;
+  }
+
+  .window--website {
+    width: 80vw;
+  }
+
+  .window__container__img {
+    overflow: hidden;
+    border-radius: 0 0 0.4375rem 0.625rem;
+    border: 0.718px solid #dbdbdb;
+    background-color: var(--primary);
+  }
+
+  .window__container__img--website {
+    aspect-ratio: 7/4;
+  }
+
+  .window__img {
+    display: block;
+  }
+
+  .window__img--desktop {
+    display: none;
+    transform-origin: top left;
+  }
+
+  .window--website.project__item{
+    width: 100%;
+  }
+  
+  .window--website.digital__window {
+      width: 100%;
+    }
+
+  @media only screen and (min-width: 40em) {
+    /* window styles */
+    .window--website {
+      width: 50vw;
+    }
+
+    .window__img--desktop {
+      display: block;
+    }
+
+    .window__img--mobile {
+      display: none;
+    }
+  }
+</style>
+
+<div
+  class=`window ${website ? "window--website" : ""} ${extraClass ? extraClass : "" }`
+>
+  <WindowTopbar title={title} />
+  <div
+    class=`window__container__img  ${website ? "window__container__img--website" : ""}`
+  >
+    {
+      img && (
+        <Picture
+          class={link ? "window__img window__img--mobile" : "window__img"}
+          src={img}
+          alt={`An image of the website titled: ${title}.`}
+        />
+      )
+    }
+
+    {
+      link && (
+        <embed
+          class="window__img window__img--desktop"
+          src={link}
+          width={linkWidth ? linkWidth : "1280"}
+          height={linkHeight ? linkHeight : "900"}
+        />
+      )
+    }
+  </div>
+</div>

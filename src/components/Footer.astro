@@ -1,0 +1,163 @@
+---
+import { Picture } from "astro:assets";
+import logo from "../assets/logo/logo.svg";
+import errorLine from "../assets/svg/footer-errorline.svg";
+---
+
+<style>
+  .body__container {
+    margin: 0;
+  }
+
+  p {
+    font-size: var(--fs--sm);
+  }
+
+  footer {
+    overflow-x: clip;
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 2rem;
+    padding: 5rem 0;
+    background-color: #e8f1fa;
+    max-width: 62rem;
+    margin: 0 auto;
+  }
+
+  .footer__logo {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .footer__logo__svg {
+    max-width: 4.5rem;
+  }
+
+  .footer__logo__text {
+    margin: 0;
+  }
+
+  .footer__nav__links {
+    text-decoration: underline;
+    text-transform: capitalize;
+  }
+
+  .footer__nav {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .footer__contact {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 0.2rem;
+    align-items: center;
+  }
+
+  .footer__contact__link {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+  }
+
+  .footer__contact__title {
+    font-weight: 700;
+    text-transform: capitalize;
+    margin-bottom: 0.3rem;
+  }
+
+  .footer__errorline {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 60rem;
+  }
+
+  .footer__colour {
+    background-color: #e8f1fa;
+    width: 100%;
+  }
+
+  @media only screen and (min-width: 45em) {
+    footer {
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+  }
+</style>
+<div class="footer__colour">
+  <div class="body__container">
+    <footer>
+      <a class="footer__logo" href="/">
+        <Picture
+          src={logo}
+          alt="A question mark between square brackets"
+          class="footer__logo__svg"
+        />
+        <h2 class="footer__logo__text text--poster">
+          esther <br /> van driessche
+        </h2>
+      </a>
+
+      <ul class="footer__nav">
+        <li class="footer__nav__links">
+          <p><a href="/digital/">digital design</a></p>
+        </li>
+        <li class="footer__nav__links">
+          <p><a href="">analog design</a></p>
+        </li>
+      </ul>
+
+      <Picture
+        class="footer__errorline"
+        src={errorLine}
+        alt="error underline"
+      />
+
+      <div class="footer__contact">
+        <p class="footer__contact__title">contact me</p>
+        <p class="footer__contact__link">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="17"
+            height="17"
+            viewBox="0 0 17 17"
+            fill="none"
+          >
+            <path
+              d="M2.83073 14.1663C2.44115 14.1663 2.10776 14.0277 1.83056 13.7506C1.55337 13.4734 1.41453 13.1397 1.41406 12.7497V4.24967C1.41406 3.86009 1.5529 3.5267 1.83056 3.24951C2.10823 2.97231 2.44162 2.83348 2.83073 2.83301H14.1641C14.5536 2.83301 14.8873 2.97184 15.1649 3.24951C15.4426 3.52717 15.5812 3.86056 15.5807 4.24967V12.7497C15.5807 13.1393 15.4421 13.4729 15.1649 13.7506C14.8877 14.0282 14.5541 14.1668 14.1641 14.1663H2.83073ZM14.1641 5.66634L8.86927 8.9778C8.81024 9.01322 8.74838 9.0399 8.68369 9.05784C8.61899 9.07579 8.5569 9.08452 8.4974 9.08405C8.4379 9.08358 8.37603 9.07484 8.31181 9.05784C8.24759 9.04084 8.18549 9.01416 8.12552 8.9778L2.83073 5.66634V12.7497H14.1641V5.66634ZM8.4974 7.79134L14.1641 4.24967H2.83073L8.4974 7.79134ZM2.83073 5.84342V4.79863V4.81634V4.80784V5.84342Z"
+              fill="black"></path>
+          </svg>
+          <a href="mailto:esthervandriessche@icloud.com"
+            >esthervandriessche@icloud.com</a
+          >
+        </p>
+        <p class="footer__contact__link">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+          >
+            <path
+              d="M5.1987 1.3335H10.7987C12.932 1.3335 14.6654 3.06683 14.6654 5.20016V10.8002C14.6654 11.8257 14.258 12.8092 13.5328 13.5343C12.8077 14.2594 11.8242 14.6668 10.7987 14.6668H5.1987C3.06536 14.6668 1.33203 12.9335 1.33203 10.8002V5.20016C1.33203 4.17466 1.73941 3.19116 2.46455 2.46602C3.18969 1.74088 4.17319 1.3335 5.1987 1.3335ZM5.06536 2.66683C4.42884 2.66683 3.8184 2.91969 3.36831 3.36977C2.91822 3.81986 2.66536 4.43031 2.66536 5.06683V10.9335C2.66536 12.2602 3.7387 13.3335 5.06536 13.3335H10.932C11.5686 13.3335 12.179 13.0806 12.6291 12.6306C13.0792 12.1805 13.332 11.57 13.332 10.9335V5.06683C13.332 3.74016 12.2587 2.66683 10.932 2.66683H5.06536ZM11.4987 3.66683C11.7197 3.66683 11.9317 3.75463 12.088 3.91091C12.2442 4.06719 12.332 4.27915 12.332 4.50016C12.332 4.72118 12.2442 4.93314 12.088 5.08942C11.9317 5.2457 11.7197 5.3335 11.4987 5.3335C11.2777 5.3335 11.0657 5.2457 10.9094 5.08942C10.7532 4.93314 10.6654 4.72118 10.6654 4.50016C10.6654 4.27915 10.7532 4.06719 10.9094 3.91091C11.0657 3.75463 11.2777 3.66683 11.4987 3.66683ZM7.9987 4.66683C8.88275 4.66683 9.7306 5.01802 10.3557 5.64314C10.9808 6.26826 11.332 7.11611 11.332 8.00016C11.332 8.88422 10.9808 9.73206 10.3557 10.3572C9.7306 10.9823 8.88275 11.3335 7.9987 11.3335C7.11464 11.3335 6.2668 10.9823 5.64167 10.3572C5.01655 9.73206 4.66536 8.88422 4.66536 8.00016C4.66536 7.11611 5.01655 6.26826 5.64167 5.64314C6.2668 5.01802 7.11464 4.66683 7.9987 4.66683ZM7.9987 6.00016C7.46826 6.00016 6.95956 6.21088 6.58448 6.58595C6.20941 6.96102 5.9987 7.46973 5.9987 8.00016C5.9987 8.5306 6.20941 9.0393 6.58448 9.41438C6.95956 9.78945 7.46826 10.0002 7.9987 10.0002C8.52913 10.0002 9.03784 9.78945 9.41291 9.41438C9.78798 9.0393 9.9987 8.5306 9.9987 8.00016C9.9987 7.46973 9.78798 6.96102 9.41291 6.58595C9.03784 6.21088 8.52913 6.00016 7.9987 6.00016Z"
+              fill="black"></path>
+          </svg>
+          <a
+            href="https://www.instagram.com/esthervandriessche/"
+            target="_blank">esthervandriessche</a
+          >
+        </p>
+      </div>
+    </footer>
+  </div>
+</div>

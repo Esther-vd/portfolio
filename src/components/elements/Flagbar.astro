@@ -1,0 +1,56 @@
+---
+const { text, up } = Astro.props;
+---
+
+<style>
+  .flagbar {
+    background-color: rgba(43, 43, 43, 0.8);
+    align-items: center;
+    padding: 0.4rem 1.5rem;
+    border-radius: 0.3rem;
+    /* border: 1px solid rgba(120, 120, 120, 0.5); */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    position: relative;
+    margin: 1.5rem 0.5rem;
+  }
+
+  .flagbar:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-bottom-color: rgba(43, 43, 43, 0.8);
+    border-top: 0;
+    margin-left: -10px;
+    margin-top: -10px;
+  }
+
+  .flagbar--up:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    top: auto;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top-color: rgba(43, 43, 43, 0.8);
+    border-bottom: 0;
+    margin-left: -10px;
+    margin-bottom: -10px;
+  }
+
+  .flagbar__text {
+    color: var(--white);
+    font-size: var(--fs-sm);
+  }
+</style>
+
+<div class=`flagbar ${up ? "flagbar--up" : ""}`>
+  <p class="flagbar__text">{text}</p>
+</div>

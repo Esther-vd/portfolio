@@ -1,0 +1,134 @@
+---
+import Picture from "astro/components/Picture.astro";
+import logo from "../assets/logo/logo.svg";
+import Hamburger from "./Hamburger.astro";
+
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
+console.log(currentPath);
+---
+
+<style>
+  nav {
+    margin-top: 2rem;
+  }
+
+  .nav__container,
+  .nav__links {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav__links {
+    display: none;
+    text-transform: uppercase;
+  }
+
+  .nav__link-item p a {
+    position: relative;
+    font-size: var(--fs-sm);
+    font-weight: 500;
+  }
+
+  .nav__link-item .active::after {
+    content: url(../assets/svg/nav-selected-icon.svg);
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    transform: scale(.9);
+  }
+
+  .nav__logo {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 0.5rem;
+  }
+
+  .nav__logo__svg {
+    width: 2rem;
+    height: auto;
+    font-weight: normal;
+  }
+
+  .nav__mobile__text {
+    font-size: 1rem;
+  }
+
+  .nav__desktop__text {
+    display: none;
+  }
+
+  .expanded {
+    display: unset;
+    margin: 1rem;
+    display: flex;
+    gap: 2rem;
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+
+  @media only screen and (min-width: 40em) {
+    .nav__desktop__text {
+      display: inline;
+    }
+
+    nav {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav__mobile__text {
+      display: none;
+    }
+
+    .nav__links {
+      gap: 3.25rem;
+      display: flex;
+      flex-flow: row nowrap;
+    }
+
+    .nav__link-item .active::after {
+      content: url(../assets/svg/nav-selected-icon.svg);
+      position: absolute;
+      top: -25px;
+      left: -25px;
+      transform: scale(1);
+    }
+  }
+</style>
+
+<nav>
+  <div class="nav__container">
+    <a href="/" class="nav__logo">
+      <Picture
+        src={logo}
+        alt="A question mark between square brackets"
+        class="nav__logo__svg"
+      />
+      <h1 class="text--poster nav__desktop__text">Esther van Driessche</h1>
+    </a>
+    <h1 class="text--poster nav__mobile__text">Esther van Driessche</h1>
+    <Hamburger />
+  </div>
+
+  <ul class="nav__links">
+    <li class="nav__link-item">
+      <p>
+        <a class={currentPath === "digital/" ? "active" : ""} href="/digital/"
+          >Digital Design</a
+        >
+      </p>
+    </li>
+    <li class="nav__link-item">
+      <p>
+        <a class={currentPath === "analog/" ? "active" : ""} href="/analog/"
+          >Analog Art</a
+        >
+      </p>
+    </li>
+  </ul>
+</nav>

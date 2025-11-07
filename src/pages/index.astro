@@ -1,0 +1,154 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Folder from "../components/elements/Folder.astro";
+import Window from "../components/elements/Window.astro";
+import Searchbar from "../components/elements/Searchbar.astro";
+import MoreBtn from "../components/elements/MoreBtn.astro";
+import Flagbar from "../components/elements/Flagbar.astro";
+import PictureSelected from "../components/elements/PictureSelected.astro";
+import Footer from "../components/Footer.astro";
+
+import texturefullBowl from "../assets/img/screen-texturefulbowl.jpg";
+import plantinonthecover from "../assets/img/screen-plantinonthecover.jpg";
+import picturebarcelona from "../assets/img/self-picturebarcelona.jpg";
+import colourportrait from "../assets/img/self-colourportrait.jpg";
+import "../styles/index.css";
+---
+
+<BaseLayout>
+  <div class="body__container">
+    <article class="header">
+      <div class="header__text">
+        <p class="text--center text--medium text--abovetitle">Hi! I'm Esther</p>
+        <h2 class="text--center text--poster text--title">designer</h2>
+        <p class="text--center text--poster text--subtitle">
+          and all around creative
+        </p>
+      </div>
+      <Folder title="important-document" />
+    </article>
+    <article class="works">
+      <h2 class="color--primary text--right text--section">creative works</h2>
+      <section class="works__center works__one fullscreen--center">
+        <p class="text--center text--poster text--subtitle works__one__title">
+          I design websites
+        </p>
+        <Window
+          website={true}
+          title="texturefull bowl"
+          img={texturefullBowl}
+          link="https://esthervandriessche.be/texturefullbowl/"
+          linkWidth="1480"
+        />
+        <Searchbar text="search for free time here ..." />
+        <p class="works__p">And use code to bring them to life</p>
+      </section>
+      <section class="works__center works__two fullscreen--center">
+        <p class="text--abovetitle text--medium text--center">
+          But I make more
+        </p>
+        <p class="text--poster text--title color--primary works__two__title">
+          than just websites
+        </p>
+        <p class="text--center">
+          I design digital (and sometimes non-digital) experiences
+        </p>
+        <MoreBtn />
+      </section>
+      <section class="works__center works__three fullscreen--center">
+        <Window
+          website={true}
+          title="texturefull bowl"
+          img={plantinonthecover}
+          link="https://esther-vd.github.io/INT3-esthervandriessche-Plantin/"
+          linkWidth="1480"
+        />
+        <p class="text--poster text--subtitle works__three__title">
+          I tell Stories
+        </p>
+        <p class="works__p">with design and code</p>
+        <Flagbar text="storyteller" />
+      </section>
+      <section class="works__noncenter">
+        <div>
+          <h2>See more work</h2>
+          <p>
+            <em>A collection of my creative digital works</em>. And the projects
+            I had the most fun creating and look back on fondly. They were all
+            challenging in their own ways and are in no way perfect but I'm
+            still a little proud to show them of.
+          </p>
+        </div>
+        <ul class="works__last__folder__container">
+          <li>
+            <a href="/digital/">
+              <Folder title="visual design" />
+            </a>
+          </li>
+          <li>
+            <a href="/digital/">
+              <Folder title="creative coding projects" />
+            </a>
+            <li>
+              <a href="/digital/">
+                <Folder title="experience design" />
+              </a>
+            </li>
+          </li>
+        </ul>
+        <article class="intro">
+          <h2 class="color--primary text--right text--section">about me</h2>
+          <section class="about__one about__center fullscreen--center">
+            <p class="text--center text--medium text--abovetitle">
+              You've seen what I do
+            </p>
+            <p class="text--poster text--title text--center about__title">
+              But who am I?
+            </p>
+            <div class="about__container">
+              <div class="about__img">
+                <PictureSelected
+                  extraClass="about__img__selected"
+                  title="coloured soft paster self portrait"
+                  img={colourportrait}
+                  width="153"
+                  height="255.11"
+                />
+                <Window
+                  extraClass="about__img__window"
+                  title="This is me"
+                  img={picturebarcelona}
+                />
+              </div>
+              <div class="about__introduction">
+                <h2>Esther van driessche</h2>
+                <p>
+                  I'm a <em>designer born in Belgium</em>. I like doing anything
+                  creative from drawing, making things from cardboard to sewing
+                  my own clothes. While my heart belongs to design I'm (not so)
+                  secretly also in love with coding. I love a good organised
+                  database and animating my design with code or in after
+                  effects.
+                </p>
+              </div>
+            </div>
+          </section>
+          <section class="about__center about__two fullscreen--center">
+            <div class="about__two__container">
+              <p
+                class="text--center text--medium text--abovetitle about__two__sub"
+              >
+                I thrive in
+              </p>
+              <p class="text--poster text--subtitle text--center">
+                organised chaos
+              </p>
+              <div class="about__bubble"><Flagbar text="creativity" /></div>
+            </div>
+          </section>
+        </article>
+      </section>
+    </article>
+  </div>
+  <Footer />
+</BaseLayout>

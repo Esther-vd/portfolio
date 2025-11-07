@@ -1,0 +1,32 @@
+---
+import Picture from "astro/components/Picture.astro";
+import folder from "../../assets/svg/folder.svg";
+
+const { title } = Astro.props;
+---
+
+<style>
+  /* folder */
+  .folder {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .folder__title {
+    font-size: var(--fs-base);
+    font-weight: 500;
+    max-width: 18ch;
+  }
+
+  @media only screen and (max-width: 40em) {
+    .folder__svg {
+      max-width: 8rem;
+    }
+  }
+</style>
+
+<div class="folder">
+  <Picture class="folder__svg" src={folder} alt="a folder icon" />
+  <p class="folder__title text--center">{title}</p>
+</div>

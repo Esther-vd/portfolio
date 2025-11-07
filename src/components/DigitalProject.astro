@@ -1,0 +1,109 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Window from "../components/elements/Window.astro";
+import Flagbar from "../components/elements/Flagbar.astro";
+
+type Props = CollectionEntry<"project">["data"];
+const { title, cause, heroUrl, date, description } = Astro.props;
+---
+
+<style>
+  .back {
+    margin-top: 1rem;
+  }
+  .back__container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    font-size: 0.5rem;
+  }
+
+  .back__container  p {
+    font-size: var(--fs-sm);
+  }
+
+  .digital__hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    min-height: 85vh;
+    justify-content: space-between;
+  }
+
+  .digital__date {
+    font-weight: 700;
+  }
+
+  .digital__title {
+    margin: 0;
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .digital__description {
+    margin-bottom: 2rem;
+    max-width: 45ch;
+  }
+
+  .digital__hero__img {
+    align-self: center;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin-top: -3rem;
+  }
+
+  .digital__detail {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 6rem;
+  }
+
+  @media only screen and (min-width: 50em) {
+    .digital__hero {
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+    }
+  }
+</style>
+
+<article>
+  <div class="back">
+    <a class="back__container" href="/digital/">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="15"
+        height="11"
+        viewBox="0 0 15 11"
+        fill="none"
+      >
+        <path
+          d="M6.21376 0.29312C6.02602 0.105435 5.77142 0 5.50595 0C5.24049 0 4.98589 0.105435 4.79815 0.29312L0.293029 4.79824C0.105345 4.98598 -9.05991e-05 5.24058 -9.05991e-05 5.50604C-9.05991e-05 5.77151 0.105345 6.02611 0.293029 6.21385L4.79815 10.719C4.98697 10.9013 5.23985 11.0022 5.50235 11C5.76484 10.9977 6.01594 10.8924 6.20156 10.7068C6.38718 10.5212 6.49247 10.2701 6.49475 10.0076C6.49703 9.74507 6.39612 9.49218 6.21376 9.30336L3.50368 6.50718H13.0145C13.28 6.50718 13.5346 6.40171 13.7224 6.21396C13.9101 6.02621 14.0156 5.77156 14.0156 5.50604C14.0156 5.24053 13.9101 4.98588 13.7224 4.79813C13.5346 4.61038 13.28 4.50491 13.0145 4.50491H3.50368L6.21376 1.70873C6.40144 1.52099 6.50688 1.26639 6.50688 1.00092C6.50688 0.735458 6.40144 0.480861 6.21376 0.29312Z"
+          fill="#2B2B2B"></path>
+      </svg>
+      <p>back to overview</p>
+    </a>
+  </div>
+  <section class="digital__hero">
+    <div class="digital__hero__img">
+      <Flagbar text="a digital project" up={true} />
+      <Window
+        extraClass="digital__window"
+        website={true}
+        title="screencapture"
+        img={heroUrl}
+      />
+    </div>
+    <div class="digital__hero__text">
+      <p class="text--medium text--abovetitle digital___cause">{cause}</p>
+      <h2 class="text--poster text--subtitle digital__title">{title}</h2>
+      <p class="digital__description">{description}</p>
+      <p class="digital__date">{date}</p>
+    </div>
+  </section>
+  <div class="digital__detail">
+    <slot />
+  </div>
+</article>
