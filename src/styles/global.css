@@ -94,6 +94,10 @@ em {
 
 .text--scribbles {
   font-family: "estherHandwriting", serif;
+  font-size: var(--fs-xl);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--accent-colour, #f12e1d);
+  line-height: 70%;
 }
 
 .text--computer {
@@ -246,15 +250,15 @@ em {
     transform: translate(-50%, 0) scale(1);
   }
 
-  .error-line--about.error-line::after{
+  .error-line--about.error-line::after {
     bottom: 5px;
-  transform: translate(-50%, 0) scale(1.5);
-}
+    transform: translate(-50%, 0) scale(1.5);
+  }
 
-  .error-line--chaos.error-line::after{
+  .error-line--chaos.error-line::after {
     bottom: 0;
-  transform: translate(-50%, 0) scale(1.8);
-}
+    transform: translate(-50%, 0) scale(1.8);
+  }
 
   /* markdown */
   /* markdown styling */
