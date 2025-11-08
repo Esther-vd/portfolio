@@ -78,7 +78,8 @@
 }
 
 .about__bubble {
-  align-self: flex-end;
+  align-self: center;
+  margin-top: 1rem;
 }
 
 .about__two__container {
@@ -137,6 +138,10 @@
     gap: 4rem;
     height: 93vh;
     padding: 0;
+  }
+
+  .about__bubble {
+    align-self: flex-end;
   }
 }
 

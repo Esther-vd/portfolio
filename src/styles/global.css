@@ -138,6 +138,23 @@ em {
   color: var(--accent);
 }
 
+.error-line {
+  position: relative;
+}
+
+.error-line::after {
+  content: url(../assets/svg/errorline.svg);
+  position: absolute;
+  left: 50%;
+  bottom: -12px;
+  transform: translate(-50%, 0);
+  z-index: -1;
+}
+
+.error-line--hero.error-line::after {
+  transform: translate(-50%, 0) scale(0.8);
+}
+
 /* markdown */
 /* markdown styling */
 .detail__brief {
@@ -169,10 +186,9 @@ em {
   gap: 2rem;
 }
 
-.detail__result__container__text{
+.detail__result__container__text {
   display: flex;
   flex-flow: column nowrap;
-
 }
 
 .detail__img__stack {
@@ -182,19 +198,20 @@ em {
   align-items: center;
   font-size: var(--fs-sm);
   font-weight: 500;
-   width: 10rem;
-   align-self: center;
+  width: 10rem;
+  align-self: center;
 }
 
-.detail__img__process{
+.detail__img__process {
   display: flex;
   width: 100%;
   flex-flow: column;
   align-items: center;
 }
 
-.detail__img__process p img, .detail__img__process p{
-  min-width:100%;
+.detail__img__process p img,
+.detail__img__process p {
+  min-width: 100%;
 }
 
 /* media queries */
@@ -225,6 +242,20 @@ em {
     font-size: 1.5rem;
   }
 
+  .error-line--hero.error-line::after {
+    transform: translate(-50%, 0) scale(1);
+  }
+
+  .error-line--about.error-line::after{
+    bottom: 5px;
+  transform: translate(-50%, 0) scale(1.5);
+}
+
+  .error-line--chaos.error-line::after{
+    bottom: 0;
+  transform: translate(-50%, 0) scale(1.8);
+}
+
   /* markdown */
   /* markdown styling */
   .detail__brief {
@@ -249,12 +280,16 @@ em {
   }
 
   .detail__img__stack {
-   align-self: start;
-}
+    align-self: start;
+  }
 }
 
 @media only screen and (min-width: 50em) {
   .body__container {
     padding: 0 5rem;
+  }
+
+  .error-line--hero.error-line::after {
+    transform: translate(-50%, 0) scale(1.2);
   }
 }
