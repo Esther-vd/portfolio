@@ -10,6 +10,7 @@ const project = defineCollection({
 		description: z.string(),
 		cause: z.string(),
 		heroUrl: image(),
+		software: z.array(image()),
 	}),
 });
 
