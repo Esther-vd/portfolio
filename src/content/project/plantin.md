@@ -4,7 +4,7 @@ date: "Jan 2025"
 cause: "Devine - Integration"
 heroUrl: "../../assets/img/screen-plantinonthecover.jpg"
 description: "An interactive scrolllytelling website that tells the story of Christopher Plantin. A name well-known in the history of the printing press. The website is a responsive storybook, teaching you more about Plantin’s business and the printing press."
-comment: "First major real client work!"
+comment: "First real major client work!"
 software:
 - "../../assets/img/digital/icons/figma.png"
 - "../../assets/img/digital/icons/visual.png"
