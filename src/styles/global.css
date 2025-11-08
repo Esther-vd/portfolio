@@ -16,6 +16,7 @@
   --fs-xl: clamp(1.95rem, 1.83vi + 1.5rem, 2.96rem);
   --fs-xxl: clamp(2.44rem, 2.74vi + 1.76rem, 3.95rem);
   --fs-xxxl: clamp(3.05rem, 4.02vi + 2.05rem, 5.26rem);
+  --shadow : 2.87px 2.87px 17.796px 0 rgba(0, 0, 0, 0.13);
 }
 
 html {
@@ -34,6 +35,18 @@ html {
   width: 100vw;
   max-width: 140rem;
   padding: 0 1rem;
+}
+
+body{
+  cursor: url('../assets/svg/cursor-normal.svg'), auto;
+}
+
+.cursor--retro{
+cursor: url('../assets/svg/cursor-retro.svg'), auto;
+}
+
+.cursor--pointer{
+  cursor: url("../assets/svg/cursor-pointer.svg") 13 13, pointer;
 }
 
 body,

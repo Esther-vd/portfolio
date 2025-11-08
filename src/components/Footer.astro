@@ -2,6 +2,7 @@
 import { Picture } from "astro:assets";
 import logo from "../assets/logo/logo.svg";
 import errorLine from "../assets/svg/footer-errorline.svg";
+import Postit from "./elements/Postit.astro";
 ---
 
 <style>
@@ -85,6 +86,12 @@ import errorLine from "../assets/svg/footer-errorline.svg";
     width: 100%;
   }
 
+  @media only screen and (max-width: 40em) {
+    .footer__postit{
+      display: none;
+    }
+  }
+
   @media only screen and (min-width: 45em) {
     footer {
       flex-flow: row nowrap;
@@ -93,9 +100,13 @@ import errorLine from "../assets/svg/footer-errorline.svg";
     }
   }
 </style>
-<div class="footer__colour">
+<div class="footer__colour cursor--retro">
   <div class="body__container">
     <footer>
+      <div class="footer__postit">
+        <Postit text="Here comes the footer" />
+      </div>
+
       <a class="footer__logo" href="/portfolio/">
         <Picture
           src={logo}
