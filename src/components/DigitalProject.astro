@@ -3,9 +3,13 @@ import type { CollectionEntry } from "astro:content";
 import Window from "../components/elements/Window.astro";
 import Flagbar from "../components/elements/Flagbar.astro";
 import Postit from "./elements/Postit.astro";
+import { Picture } from "astro:assets";
+
+import figma from "../assets/img/digital/icons/figma.png";
 
 type Props = CollectionEntry<"project">["data"];
-const { title, cause, heroUrl, date, description, comment } = Astro.props;
+const { title, cause, heroUrl, date, description, comment, software } =
+  Astro.props;
 ---
 
 <style>
@@ -70,6 +74,30 @@ const { title, cause, heroUrl, date, description, comment } = Astro.props;
     transform: scale(0.5);
   }
 
+  .software-list {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 0.3rem;
+    background-color: rgba(43, 43, 43, 0.8);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border: 0.235px solid #4c4c4c;
+    padding: 0.5rem;
+    border-radius: 0.9rem;
+    margin: 1rem;
+  }
+
+  .software-item {
+    width: 2.5rem;
+  }
+
+  .software-item:last-child {
+    border-left: solid 0.792px rgba(127, 126, 126, 0.5);
+    padding-left: 0.3rem;
+    width: 2.85rem;
+  }
+
   @media only screen and (max-width: 50em) {
     .digital__hero__img {
       align-self: center;
@@ -126,6 +154,15 @@ const { title, cause, heroUrl, date, description, comment } = Astro.props;
           <Postit text={comment} />
         </div>
       </Window>
+      <ul class="software-list">
+        {
+          software.map((item) => (
+            <li class="software-item">
+              <Picture class="software-icon" src={item} alt="software" />
+            </li>
+          ))
+        }
+      </ul>
     </div>
     <div class="digital__hero__text">
       <p class="text--medium text--abovetitle digital___cause">{cause}</p>
