@@ -10,6 +10,7 @@ software:
 - "../../assets/img/digital/icons/visual.png"
 - "../../assets/img/digital/icons/git.png"
 - "../../assets/img/digital/icons/javascript.png"
+visual: true
 ---
 
 <div class="detail__brief">
