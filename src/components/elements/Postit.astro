@@ -1,0 +1,39 @@
+---
+import { Picture } from "astro:assets";
+import postit from "../../assets/svg/postit.svg";
+
+const { text } = Astro.props;
+---
+
+<style>
+  .postit {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    place-items: center;
+  }
+
+  .postit__bg {
+    margin-left: -1.5rem;
+  }
+
+  .postit__bg,
+  .postit__text {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .postit__text {
+    color: var(--black);
+    -webkit-text-stroke-color: var(--black, #f12e1d);
+    font-size: var(--fs-l);
+    max-width: 15ch;
+  }
+</style>
+
+<div class="postit">
+  <div class="postit__bg">
+    <Picture src={postit} alt="a yellow sticky note" />
+  </div>
+  <p class="postit__text text--center text--scribbles">{text}</p>
+</div>

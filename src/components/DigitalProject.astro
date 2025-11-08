@@ -2,15 +2,16 @@
 import type { CollectionEntry } from "astro:content";
 import Window from "../components/elements/Window.astro";
 import Flagbar from "../components/elements/Flagbar.astro";
+import Postit from "./elements/Postit.astro";
 
 type Props = CollectionEntry<"project">["data"];
-const { title, cause, heroUrl, date, description } = Astro.props;
+const { title, cause, heroUrl, date, description, comment } = Astro.props;
 ---
 
 <style>
   .back {
     margin-top: 1rem;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
   }
   .back__container {
     display: flex;
@@ -53,7 +54,7 @@ const { title, cause, heroUrl, date, description } = Astro.props;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    margin-top: -3rem;
+    margin-top: -5rem;
   }
 
   .digital__detail {
@@ -62,10 +63,35 @@ const { title, cause, heroUrl, date, description } = Astro.props;
     margin-bottom: 6rem;
   }
 
+  .window__postit {
+    position: absolute;
+    top: 65%;
+    left: -10%;
+    transform: scale(0.5);
+  }
+
+  @media only screen and (max-width: 50em) {
+    .digital__hero__img {
+      align-self: center;
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+     margin: 2rem;
+    }
+  }
+
   @media only screen and (min-width: 50em) {
     .digital__hero {
       grid-template-columns: 1fr 1fr;
       align-items: center;
+      margin-left: 4rem;
+    }
+
+    .window__postit {
+      position: absolute;
+      top: 20%;
+      left: -15%;
+      transform: scale(1);
     }
   }
 </style>
@@ -95,7 +121,11 @@ const { title, cause, heroUrl, date, description } = Astro.props;
         website={true}
         title="screencapture"
         img={heroUrl}
-      />
+      >
+        <div class="window__postit">
+          <Postit text={comment} />
+        </div>
+      </Window>
     </div>
     <div class="digital__hero__text">
       <p class="text--medium text--abovetitle digital___cause">{cause}</p>
@@ -106,5 +136,6 @@ const { title, cause, heroUrl, date, description } = Astro.props;
   </section>
   <div class="digital__detail">
     <slot />
+    <Postit text="The End" />
   </div>
 </article>
