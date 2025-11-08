@@ -15,6 +15,23 @@
   align-items: center;
 }
 
+.scribble__text--hero {
+
+  white-space: nowrap;
+}
+
+.scribble__arrow--hero {
+  transform-origin: center;
+  transform: scale(0.8);
+}
+
+.scribble--hero {
+  position: absolute;
+  bottom: -80px;
+  left: -100px;
+  transform: scale(1) rotate(-30deg);
+}
+
 /* works */
 .works__center {
   padding-top: 2rem;
@@ -54,6 +71,20 @@
   z-index: 2;
 }
 
+.scribble--plantin{
+  display: flex;
+  flex-flow: row nowrap;
+  gap: .5rem;
+  position: absolute;
+  left: -10px;
+  top: -130px;
+
+}
+
+.scribble__arrow--plantin{
+  transform: scale(.8);
+}
+
 .works__last__folder__container {
   display: flex;
   flex-flow: column;
@@ -78,7 +109,8 @@
 }
 
 .about__bubble {
-  align-self: flex-end;
+  align-self: center;
+  margin-top: 1rem;
 }
 
 .about__two__container {
@@ -138,6 +170,32 @@
     height: 93vh;
     padding: 0;
   }
+
+  .about__bubble {
+    align-self: flex-end;
+  }
+
+  .scribble--hero {
+    position: absolute;
+    bottom: -35px;
+    left: -150px;
+    transform: scale(1.2);
+  }
+
+  .scribble__text--hero {
+  transform: translate(-50%);
+  white-space: nowrap;
+}
+
+.scribble--plantin{
+  display: flex;
+  flex-flow: row nowrap;
+  gap: .5rem;
+  position: absolute;
+  left: -50px;
+  top: -130px;
+
+}
 }
 
 @media only screen and (min-width: 50em) {

@@ -103,7 +103,7 @@ console.log(currentPath);
 
 <nav>
   <div class="nav__container">
-    <a href="/portfolio/" class="nav__logo">
+    <a href="/portfolio/" class="nav__logo cursor--pointer">
       <Picture
         src={logo}
         alt="A question mark between square brackets"
@@ -120,7 +120,9 @@ console.log(currentPath);
     <li class="nav__link-item">
       <p>
         <a
-          class={currentPath === "portfolio/digital/" ? "active" : ""}
+          class={currentPath === "portfolio/digital/"
+            ? "active cursor--pointer"
+            : "cursor--pointer"}
           href="/portfolio/digital/">Digital Design</a
         >
       </p>
@@ -128,7 +130,9 @@ console.log(currentPath);
     <li class="nav__link-item">
       <p>
         <a
-          class={currentPath === "portfolio/analog/" ? "active" : ""}
+          class={currentPath === "portfolio/analog/"
+            ? "active cursor--pointer"
+            : "cursor--pointer"}
           href="/portfolio/analog/">Analog Art</a
         >
       </p>

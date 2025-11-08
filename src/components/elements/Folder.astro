@@ -12,7 +12,10 @@ const { title } = Astro.props;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
+    position: relative;
+    cursor: url("../../assets/svg/cursor-pointer.svg") 13 13, pointer;
   }
+
   .folder__title {
     font-size: var(--fs-base);
     font-weight: 500;
@@ -29,4 +32,5 @@ const { title } = Astro.props;
 <div class="folder">
   <Picture class="folder__svg" src={folder} alt="a folder icon" />
   <p class="folder__title text--center">{title}</p>
+  <slot />
 </div>

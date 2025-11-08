@@ -4,6 +4,7 @@ date: "date"
 cause: "school - class"
 heroUrl: "../../assets/img/"
 description: "description"
+comment: "a comment"
 ---
 
 <div class="detail__brief">

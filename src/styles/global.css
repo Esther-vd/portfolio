@@ -16,6 +16,7 @@
   --fs-xl: clamp(1.95rem, 1.83vi + 1.5rem, 2.96rem);
   --fs-xxl: clamp(2.44rem, 2.74vi + 1.76rem, 3.95rem);
   --fs-xxxl: clamp(3.05rem, 4.02vi + 2.05rem, 5.26rem);
+  --shadow : 2.87px 2.87px 17.796px 0 rgba(0, 0, 0, 0.13);
 }
 
 html {
@@ -34,6 +35,18 @@ html {
   width: 100vw;
   max-width: 140rem;
   padding: 0 1rem;
+}
+
+body{
+  cursor: url('../assets/svg/cursor-normal.svg'), auto;
+}
+
+.cursor--retro{
+cursor: url('../assets/svg/cursor-retro.svg'), auto;
+}
+
+.cursor--pointer{
+  cursor: url("../assets/svg/cursor-pointer.svg") 13 13, pointer;
 }
 
 body,
@@ -94,6 +107,10 @@ em {
 
 .text--scribbles {
   font-family: "estherHandwriting", serif;
+  font-size: var(--fs-xl);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--accent-colour, #f12e1d);
+  line-height: 70%;
 }
 
 .text--computer {
@@ -138,6 +155,23 @@ em {
   color: var(--accent);
 }
 
+.error-line {
+  position: relative;
+}
+
+.error-line::after {
+  content: url(../assets/svg/errorline.svg);
+  position: absolute;
+  left: 50%;
+  bottom: -12px;
+  transform: translate(-50%, 0);
+  z-index: -1;
+}
+
+.error-line--hero.error-line::after {
+  transform: translate(-50%, 0) scale(0.8);
+}
+
 /* markdown */
 /* markdown styling */
 .detail__brief {
@@ -169,10 +203,9 @@ em {
   gap: 2rem;
 }
 
-.detail__result__container__text{
+.detail__result__container__text {
   display: flex;
   flex-flow: column nowrap;
-
 }
 
 .detail__img__stack {
@@ -182,19 +215,20 @@ em {
   align-items: center;
   font-size: var(--fs-sm);
   font-weight: 500;
-   width: 10rem;
-   align-self: center;
+  width: 10rem;
+  align-self: center;
 }
 
-.detail__img__process{
+.detail__img__process {
   display: flex;
   width: 100%;
   flex-flow: column;
   align-items: center;
 }
 
-.detail__img__process p img, .detail__img__process p{
-  min-width:100%;
+.detail__img__process p img,
+.detail__img__process p {
+  min-width: 100%;
 }
 
 /* media queries */
@@ -225,6 +259,20 @@ em {
     font-size: 1.5rem;
   }
 
+  .error-line--hero.error-line::after {
+    transform: translate(-50%, 0) scale(1);
+  }
+
+  .error-line--about.error-line::after {
+    bottom: 5px;
+    transform: translate(-50%, 0) scale(1.5);
+  }
+
+  .error-line--chaos.error-line::after {
+    bottom: 0;
+    transform: translate(-50%, 0) scale(1.8);
+  }
+
   /* markdown */
   /* markdown styling */
   .detail__brief {
@@ -249,12 +297,16 @@ em {
   }
 
   .detail__img__stack {
-   align-self: start;
-}
+    align-self: start;
+  }
 }
 
 @media only screen and (min-width: 50em) {
   .body__container {
     padding: 0 5rem;
+  }
+
+  .error-line--hero.error-line::after {
+    transform: translate(-50%, 0) scale(1.2);
   }
 }

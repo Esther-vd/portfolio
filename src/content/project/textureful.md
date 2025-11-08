@@ -4,6 +4,7 @@ date: "Jun 2024"
 cause: "Devine - Integration"
 heroUrl: "../../assets/img/screen-texturefulbowl.jpg"
 description: "A website for picky eaters. Find out what your texture food type is by completing the quiz, and get a daily bowl menu recommended especially for your food texture. Become part of a thriving community and share your review on our bowl recipes."
+comment: "Loved designing this one"
 ---
 
 
