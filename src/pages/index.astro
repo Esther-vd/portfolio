@@ -7,11 +7,14 @@ import MoreBtn from "../components/elements/MoreBtn.astro";
 import Flagbar from "../components/elements/Flagbar.astro";
 import PictureSelected from "../components/elements/PictureSelected.astro";
 import Footer from "../components/Footer.astro";
+import Picture from "astro/components/Picture.astro";
 
 import texturefullBowl from "../assets/img/screen-texturefulbowl.jpg";
 import plantinonthecover from "../assets/img/screen-plantinonthecover.jpg";
 import picturebarcelona from "../assets/img/self-picturebarcelona.jpg";
 import colourportrait from "../assets/img/self-colourportrait.jpg";
+import arrowHero from "../assets/svg/hero-arrow.svg";
+import arrowPlantin from "../assets/svg/plantin-arrow.svg";
 import "../styles/index.css";
 ---
 
@@ -19,13 +22,26 @@ import "../styles/index.css";
   <div class="body__container">
     <article class="header">
       <div class="header__text">
-        <p class="text--center text--medium text--abovetitle">Hi! I'm Esther</p>
+        <p class="text--center text--medium text--abovetitle">
+          Hi! I'm <span class="error-line error-line--hero">Esther</span>
+        </p>
         <h2 class="text--center text--poster text--title">designer</h2>
         <p class="text--center text--poster text--subtitle">
           and all around creative
         </p>
       </div>
-      <Folder title="important-document" />
+      <Folder title="important-document">
+        <div class="scribble--hero">
+          <Picture
+            class="scribble__arrow--hero"
+            src={arrowHero}
+            alt="a red arrow"
+          />
+          <p class="color--accent text--scribbles scribble__text--hero">
+            Check this out
+          </p>
+        </div>
+      </Folder>
     </article>
     <article class="works">
       <h2 class="color--primary text--right text--section">creative works</h2>
@@ -62,7 +78,18 @@ import "../styles/index.css";
           img={plantinonthecover}
           link="https://esther-vd.github.io/INT3-esthervandriessche-Plantin/"
           linkWidth="1480"
-        />
+        >
+          <div class="scribble--plantin">
+            <p class="color--accent text--scribbles scribble__text--plantin">
+              like this!
+            </p>
+            <Picture
+              class="scribble__arrow--plantin"
+              src={arrowPlantin}
+              alt="a red arrow"
+            />
+          </div>
+        </Window>
         <p class="text--poster text--subtitle works__three__title">
           I tell Stories
         </p>
@@ -103,7 +130,7 @@ import "../styles/index.css";
               You've seen what I do
             </p>
             <p class="text--poster text--title text--center about__title">
-              But who am I?
+              But who <span class="error-line error-line--about">am</span> I?
             </p>
             <div class="about__container">
               <div class="about__img">
@@ -141,7 +168,8 @@ import "../styles/index.css";
                 I thrive in
               </p>
               <p class="text--poster text--subtitle text--center">
-                organised chaos
+                organised <span class="error-line error-line--chaos">chaos</span
+                >
               </p>
               <div class="about__bubble"><Flagbar text="creativity" /></div>
             </div>

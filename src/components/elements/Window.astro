@@ -10,6 +10,7 @@ const { title, img, link, linkWidth, linkHeight, website, extraClass } =
   .window {
     display: block;
     width: fit-content;
+    position: relative;
   }
 
   .window--website {
@@ -88,4 +89,5 @@ const { title, img, link, linkWidth, linkHeight, website, extraClass } =
       )
     }
   </div>
+  <slot/>
 </div>
