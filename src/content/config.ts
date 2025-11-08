@@ -11,6 +11,9 @@ const project = defineCollection({
 		cause: z.string(),
 		heroUrl: image(),
 		software: z.array(image()),
+		experience: z.boolean().optional(),
+		visual: z.boolean().optional(),
+		code: z.boolean().optional(),
 	}),
 });
 

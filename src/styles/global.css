@@ -172,6 +172,17 @@ em {
   transform: translate(-50%, 0) scale(0.8);
 }
 
+.error-line--cause{
+  white-space: nowrap;
+  width: min-content;
+  
+}
+
+.error-line--cause.error-line::after{
+  left: 0%;
+  transform: translate(0, 0);
+}
+
 /* markdown */
 /* markdown styling */
 .detail__brief {
