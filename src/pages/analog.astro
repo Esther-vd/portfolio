@@ -1,17 +1,10 @@
 ---
+import Construction from "../components/elements/Construction.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<style>
-    .construction__container{
-        display: grid;
-        place-items: center;
-        min-height: 90vh;
-    }
-</style>
-
 <BaseLayout>
-  <div class="construction__container">
-    <h2 class="text--poster text--title text--center">still under construction</h2>
+  <div class="body__container">
+   <Construction/>
   </div>
 </BaseLayout>
