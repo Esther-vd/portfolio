@@ -123,58 +123,54 @@ import "../styles/index.css";
             </li>
           </li>
         </ul>
-        <article class="intro">
-          <h2 class="color--primary text--right text--section">about me</h2>
-          <section class="about__one about__center fullscreen--center">
-            <p class="text--center text--medium text--abovetitle">
-              You've seen what I do
+      </section>
+    </article>
+    <article class="intro">
+      <h2 class="color--primary text--right text--section">about me</h2>
+      <section class="about__one about__center fullscreen--center">
+        <p class="text--center text--medium text--abovetitle">
+          You've seen what I do
+        </p>
+        <p class="text--poster text--title text--center about__title">
+          But who <span class="error-line error-line--about">am</span> I?
+        </p>
+        <div class="about__container">
+          <div class="about__img">
+            <PictureSelected
+              extraClass="about__img__selected"
+              title="coloured soft paster self portrait"
+              img={colourportrait}
+              width="153"
+              height="255.11"
+            />
+            <Window
+              extraClass="about__img__window"
+              title="This is me"
+              img={picturebarcelona}
+            />
+          </div>
+          <div class="about__introduction">
+            <h2>Esther van driessche</h2>
+            <p>
+              I'm a <em>designer born in Belgium</em>. I like doing anything
+              creative from drawing, making things from cardboard to sewing my
+              own clothes. While my heart belongs to design I'm (not so)
+              secretly also in love with coding. I love a good organised
+              database and animating my design with code or in after effects.
             </p>
-            <p class="text--poster text--title text--center about__title">
-              But who <span class="error-line error-line--about">am</span> I?
-            </p>
-            <div class="about__container">
-              <div class="about__img">
-                <PictureSelected
-                  extraClass="about__img__selected"
-                  title="coloured soft paster self portrait"
-                  img={colourportrait}
-                  width="153"
-                  height="255.11"
-                />
-                <Window
-                  extraClass="about__img__window"
-                  title="This is me"
-                  img={picturebarcelona}
-                />
-              </div>
-              <div class="about__introduction">
-                <h2>Esther van driessche</h2>
-                <p>
-                  I'm a <em>designer born in Belgium</em>. I like doing anything
-                  creative from drawing, making things from cardboard to sewing
-                  my own clothes. While my heart belongs to design I'm (not so)
-                  secretly also in love with coding. I love a good organised
-                  database and animating my design with code or in after
-                  effects.
-                </p>
-              </div>
-            </div>
-          </section>
-          <section class="about__center about__two fullscreen--center">
-            <div class="about__two__container">
-              <p
-                class="text--center text--medium text--abovetitle about__two__sub"
-              >
-                I thrive in
-              </p>
-              <p class="text--poster text--subtitle text--center">
-                organised <span class="error-line error-line--chaos">chaos</span
-                >
-              </p>
-              <div class="about__bubble"><Flagbar text="creativity" /></div>
-            </div>
-          </section>
-        </article>
+          </div>
+        </div>
+      </section>
+      <section class="about__center about__two fullscreen--center">
+        <div class="about__two__container">
+          <p class="text--center text--medium text--abovetitle about__two__sub">
+            I thrive in
+          </p>
+          <p class="text--poster text--subtitle text--center">
+            organised <span class="error-line error-line--chaos">chaos</span>
+          </p>
+          <div class="about__bubble"><Flagbar text="creativity" /></div>
+        </div>
       </section>
     </article>
   </div>
