@@ -14,33 +14,29 @@ const projects = await getCollection("project", ({ data }) => {
   <div class="body__container fullscreen--center">
     <h2 class="digital__title">Visual Design</h2>
     <p>
-      Working on the design of a project is perhaps my favourite part. I like
-      experimenting with different styles and tailoring each design to fit the
-      project. Creating a whole new brand identity is just as much fun as
-      pushing the boundaries of existing style guides. The design should always
-      serve the content, <em>
-        from stories to timetables I truly like doing it all</em
-      >.
+      Highlights from my different projects focused on design.
     </p>
-    <ul class="projects">
+    <ul class="projects projects--highlight">
       {
         projects.map((project) => (
-          <li class="project project--highlight">
-            <a href={`/portfolio/${project.slug}/`}>
+          <li class="project ">
+            <a class="highlight" href={`/portfolio/${project.slug}/`}>
               <Window
                 extraClass="project__item"
                 website={true}
                 title={project.data.title}
                 img={project.data.heroUrl}
               />
-              <p class="text--medium text--abovetitle highlight___cause">
-                {project.data.cause}
-              </p>
-              <h2 class="text--poster text--subtitle highlight__title">
-                {project.data.title}
-              </h2>
-              <p class="highlightl__description">{project.data.description}</p>
-              <p class="highlight__date">{project.data.date}</p>
+              <div class="highlight__text">
+                <p class="text--medium text--abovetitle highlight___cause">
+                  {project.data.cause}
+                </p>
+                <h2 class="text--poster text--subtitle highlight__title">
+                  {project.data.title}
+                </h2>
+                
+                <p class="highlight__date">{project.data.date}</p>
+              </div>
             </a>
           </li>
         ))

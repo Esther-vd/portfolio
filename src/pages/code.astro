@@ -5,27 +5,36 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/digital.css";
 
-const projects = await getCollection("project");
+const projects = await getCollection("project", ({ data }) => {
+  return data.code == true;
+});
 ---
 
 <BaseLayout>
   <div class="body__container fullscreen--center">
-    <h2 class="digital__title">digital Designs</h2>
-    <p>
-      A collection of my digitally created works. Ranging from fully coded
-      styled websites, creative coding projects to ux case studies.
-    </p>
-    <ul class="projects">
+    <h2 class="digital__title">Creative code</h2>
+    <p>Higlighting the projects centered around code that deserve your attention.</p>
+    <ul class="projects projects--highlight">
       {
         projects.map((project) => (
-          <li class="project">
-            <a href={`/portfolio/${project.slug}/`}>
+          <li class="project ">
+            <a class="highlight" href={`/portfolio/${project.slug}/`}>
               <Window
                 extraClass="project__item"
                 website={true}
                 title={project.data.title}
                 img={project.data.heroUrl}
               />
+              <div class="highlight__text">
+                <p class="text--medium text--abovetitle highlight___cause">
+                  {project.data.cause}
+                </p>
+                <h2 class="text--poster text--subtitle highlight__title">
+                  {project.data.title}
+                </h2>
+
+                <p class="highlight__date">{project.data.date}</p>
+              </div>
             </a>
           </li>
         ))
