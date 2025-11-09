@@ -8,6 +8,7 @@ import Flagbar from "../components/elements/Flagbar.astro";
 import PictureSelected from "../components/elements/PictureSelected.astro";
 import Footer from "../components/Footer.astro";
 import Picture from "astro/components/Picture.astro";
+import PictureFile from "../components/elements/PictureFile.astro";
 
 import texturefullBowl from "../assets/img/screen-texturefulbowl.jpg";
 import plantinonthecover from "../assets/img/screen-plantinonthecover.jpg";
@@ -15,6 +16,7 @@ import picturebarcelona from "../assets/img/self-picturebarcelona.jpg";
 import colourportrait from "../assets/img/self-colourportrait.jpg";
 import arrowHero from "../assets/svg/hero-arrow.svg";
 import arrowPlantin from "../assets/svg/plantin-arrow.svg";
+import selfprofesh from "../assets/img/self-profesh.png";
 import "../styles/index.css";
 ---
 
@@ -30,18 +32,29 @@ import "../styles/index.css";
           and all-around creative
         </p>
       </div>
-      <Folder title="important-document">
-        <div class="scribble--hero">
-          <Picture
-            class="scribble__arrow--hero"
-            src={arrowHero}
-            alt="a red arrow"
-          />
-          <p class="color--accent text--scribbles scribble__text--hero">
-            Check this out
-          </p>
+      <div class="header__icon">
+        <div class="header__icon__folder">
+          <Folder title="important-document">
+            <div class="scribble--hero">
+              <Picture
+                class="scribble__arrow--hero"
+                src={arrowHero}
+                alt="a red arrow"
+              />
+              <p class="color--accent text--scribbles scribble__text--hero">
+                Check this out
+              </p>
+            </div>
+          </Folder>
         </div>
-      </Folder>
+        <div class="header__icon__file">
+          <PictureFile
+            img={selfprofesh}
+            size="74x100"
+            title="most profesh picture I could find"
+          />
+        </div>
+      </div>
     </article>
     <article class="works">
       <h2 class="color--primary text--right text--section">creative works</h2>

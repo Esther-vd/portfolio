@@ -140,6 +140,21 @@
   justify-self: end;
 }
 
+.header__icon{
+  display: grid;
+  place-items: center;
+}
+
+.header__icon__file{
+ display: none;
+ 
+}
+
+.header__icon__folder, .header__icon__file{
+  grid-column: 1;
+  grid-row: 1;
+}
+
 /* media queries */
 @media only screen and (max-width: 28em) {
   .about__title {

@@ -1,0 +1,37 @@
+---
+import { Picture } from "astro:assets";
+const { img, size, title } = Astro.props;
+---
+
+<style>
+  .picture-file {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+  }
+
+  .picture-file__img {
+    max-width: 6rem;
+  }
+
+  .picture-file__title {
+    font-size: var(--fs-sm);
+    max-width: 15ch;
+    margin-bottom: .5rem;
+  }
+
+  .picture-file__size {
+    font-size: var(--fs-sm);
+    font-weight: 700;
+  }
+</style>
+
+<div class="picture-file">
+  <Picture class="picture-file__img" src={img} alt={title} />
+  <div class="picture-file__text">
+    <p class="picture-file__title">{title}</p>
+    <p class="picture-file__size">{size}</p>
+  </div>
+  <slot />
+</div>
