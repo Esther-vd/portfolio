@@ -197,7 +197,7 @@ em {
 
 .detail__process {
   margin-top: 2rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
 .detail__process__p {
@@ -235,6 +235,7 @@ em {
   width: 100%;
   flex-flow: column;
   align-items: center;
+  margin: 2rem 0;
 }
 
 .detail__img__process p img,
