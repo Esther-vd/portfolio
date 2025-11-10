@@ -11,7 +11,6 @@ software:
 - "../../assets/img/digital/icons/photoshop.png"
 - "../../assets/img/digital/icons/sequel.png"
 - "../../assets/img/digital/icons/php.png"
-visual: true
 ---
 
 

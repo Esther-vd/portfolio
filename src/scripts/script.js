@@ -18,11 +18,11 @@ document.querySelector('.hamburger').addEventListener('click', () => {
 });
 
 // click event
-document.querySelector(".header__icon__folder").addEventListener('click', () => {
+if(document.querySelector(".header__icon__folder")){
+    document.querySelector(".header__icon__folder").addEventListener('click', () => {
     const height = document.querySelector(".header__icon__folder").getBoundingClientRect().height;
-    console.log(height);
-    
    document.querySelector(".header__icon__folder").style.display="none";
     document.querySelector(".header__icon__file").style.display="block"; 
     document.querySelector(".header__icon__file").style.height=`${height}px`;
 })
+}
