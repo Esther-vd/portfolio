@@ -14,6 +14,10 @@ const project = defineCollection({
 		experience: z.boolean().optional(),
 		visual: z.boolean().optional(),
 		code: z.boolean().optional(),
+		links: z.array(z.object({
+			name: z.string(),
+			url: z.string(),
+			})).optional(),
 	}),
 });
 

@@ -3,10 +3,11 @@ import type { CollectionEntry } from "astro:content";
 import Window from "../components/elements/Window.astro";
 import Flagbar from "../components/elements/Flagbar.astro";
 import Postit from "./elements/Postit.astro";
+import laptopBlue from "../assets/img/laptop-blue.png";
 import { Picture } from "astro:assets";
 
 type Props = CollectionEntry<"project">["data"];
-const { title, cause, heroUrl, date, description, comment, software } =
+const { title, cause, heroUrl, date, description, comment, software, links } =
   Astro.props;
 ---
 
@@ -102,6 +103,31 @@ const { title, cause, heroUrl, date, description, comment, software } =
     padding-left: 0;
   }
 
+  .links-list {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .link-item {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 1rem;
+    max-width: 13rem;
+    font-weight: 500;
+    justify-content: center;
+  }
+
+  .links{
+    margin-top: 2rem;
+  }
+
+  .link-icon{
+    max-width: 10rem;
+  }
+
   @media only screen and (max-width: 50em) {
     .digital__hero__img {
       align-self: center;
@@ -113,6 +139,7 @@ const { title, cause, heroUrl, date, description, comment, software } =
   }
 
   @media only screen and (min-width: 50em) {
+    
     .digital__hero {
       grid-template-columns: 1fr 1fr;
       align-items: center;
@@ -126,6 +153,13 @@ const { title, cause, heroUrl, date, description, comment, software } =
       left: -15%;
       transform: scale(1);
     }
+
+
+  .links-list {
+    flex-flow: row nowrap;
+    gap: 2rem;
+    align-items: center;
+  }
   }
 </style>
 
@@ -182,6 +216,27 @@ const { title, cause, heroUrl, date, description, comment, software } =
   </section>
   <div class="digital__detail">
     <slot />
-    <Postit text="The End" />
+    {
+      links && (
+        <div class="links">
+        <h2>Links</h2>
+        <p>Have a look at the project in its natural environment.</p>
+        </div>
+        <ul class="links-list">
+          {links.map((link) => (
+            <li>
+              <a class="link-item" href={link.url} target="_blank">
+                <Picture
+                  class="link-icon"
+                  src={laptopBlue}
+                  alt="a laptop with a blue loading screen"
+                />
+                <p>{link.name}</p>
+              </a>
+            </li>
+          ))}
+        </ul>
+      )
+    }
   </div>
 </article>
