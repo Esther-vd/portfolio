@@ -7,6 +7,9 @@ description: "This project is out of our world, literally. Fly with us on an int
 comment: " A case study on connection through food"
 software:
 - "../../assets/img/digital/icons/figma.png"
+links:
+- name: "behance" 
+  url: "https://www.behance.net/gallery/225615999/Belonging-in-space-an-interstellar-starship-project"
 experience: true
 ---
 

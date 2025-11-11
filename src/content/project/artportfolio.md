@@ -9,6 +9,9 @@ software:
 - "../../assets/img/digital/icons/visual.png"
 - "../../assets/img/digital/icons/gsap.png"
 - "../../assets/img/digital/icons/css.png"
+links:
+- name: "website" 
+  url: "https://esthervandriessche.be/cc3-artportfolio/"
 code: true
 ---
 

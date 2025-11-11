@@ -10,8 +10,6 @@ software:
 links:
 - name: "figma prototype" 
   url: "https://www.figma.com/proto/qjIg217QV6CPHTZ3SGIbBQ/2DEV-E_vanDriesscheEsther_telenet?page-id=0%3A1&node-id=164-813&p=f&viewport=1%2C946%2C0.11&t=eHtjH7Cu96SRrBMY-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=164%3A813&show-proto-sidebar=1"
-- name: "figma prototype" 
-  url: "https://www.figma.com/proto/qjIg217QV6CPHTZ3SGIbBQ/2DEV-E_vanDriesscheEsther_telenet?page-id=0%3A1&node-id=164-813&p=f&viewport=1%2C946%2C0.11&t=eHtjH7Cu96SRrBMY-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=164%3A813&show-proto-sidebar=1"
 visual: true
 ---
 

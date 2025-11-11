@@ -10,6 +10,9 @@ software:
 - "../../assets/img/digital/icons/visual.png"
 - "../../assets/img/digital/icons/git.png"
 - "../../assets/img/digital/icons/javascript.png"
+links:
+- name: "website" 
+  url: "https://esther-vd.github.io/INT3-esthervandriessche-Plantin/"
 visual: true
 ---
 
