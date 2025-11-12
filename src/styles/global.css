@@ -183,6 +183,14 @@ em {
   transform: translate(0, 0);
 }
 
+.devine-shirt__container{
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 500;
+}
+
 /* markdown */
 /* markdown styling */
 .detail__brief {

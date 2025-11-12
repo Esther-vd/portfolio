@@ -31,6 +31,21 @@
   transform: scale(1) rotate(-30deg);
 }
 
+.header__icon{
+  display: grid;
+  place-items: center;
+}
+
+.header__icon__file{
+ display: none;
+ 
+}
+
+.header__icon__folder, .header__icon__file{
+  grid-column: 1;
+  grid-row: 1;
+}
+
 /* works */
 .works__center {
   padding-top: 2rem;
@@ -140,19 +155,36 @@
   justify-self: end;
 }
 
-.header__icon{
+.education__p{
+  margin-bottom: 2rem;
+}
+
+.about__education{
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 3rem;
+  justify-content: center;
+  margin: 5rem 0;
+}
+
+.about__education__container{
   display: grid;
-  place-items: center;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr .5fr;
 }
 
-.header__icon__file{
- display: none;
- 
-}
-
-.header__icon__folder, .header__icon__file{
-  grid-column: 1;
+.about__education__img{
+  grid-column: 1 / span 2;
   grid-row: 1;
+  max-width: 23rem;
+}
+
+.about__education__shirt{
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 2;
+  z-index: 2;
+  align-self: flex-end;
+
 }
 
 /* media queries */
@@ -210,6 +242,7 @@
   top: -130px;
 
 }
+
 }
 
 @media only screen and (min-width: 50em) {
@@ -225,4 +258,9 @@
     justify-self: center;
     align-self: center;
   }
+
+  .about__education{
+  flex-flow: row nowrap;
+  align-items: center;
+}
 }

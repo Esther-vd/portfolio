@@ -17,6 +17,8 @@ import colourportrait from "../assets/img/self-colourportrait.jpg";
 import arrowHero from "../assets/svg/hero-arrow.svg";
 import arrowPlantin from "../assets/svg/plantin-arrow.svg";
 import selfprofesh from "../assets/img/self-profesh.png";
+import artfish from "../assets/img/art-fish.png";
+import devineshirt from "../assets/img/devine-shirt.png";
 import "../styles/index.css";
 ---
 
@@ -174,7 +176,7 @@ import "../styles/index.css";
           </div>
         </div>
       </section>
-      <section class="about__center about__two fullscreen--center">
+      <section class="about__center about__two">
         <div class="about__two__container">
           <p class="text--center text--medium text--abovetitle about__two__sub">
             I thrive in
@@ -183,6 +185,45 @@ import "../styles/index.css";
             organised <span class="error-line error-line--chaos">chaos</span>
           </p>
           <div class="about__bubble"><Flagbar text="creativity" /></div>
+        </div>
+      </section>
+      <section class="about__education">
+        <div class="about__education__container">
+          <PictureSelected
+            extraClass="about__education__img"
+            title="a drawing of a fish in a blue fishbowl with white bubbles"
+            img={artfish}
+            width="754"
+            height="484"
+          />
+          <div class="devine-shirt__container about__education__shirt">
+            <Picture
+              src={devineshirt}
+              alt="a black shirt with the Devine logo"
+              class="devine-shirt"
+            />
+            <p>Devine-Uniform</p>
+          </div>
+        </div>
+        <div>
+          <h2>my education</h2>
+          <p class="education__p">
+            I studied science with 8 hours of math in high school, where I
+            discovered my love for programming anew after using scratch when I
+            was younger.
+          </p>
+          <p class="education__p">
+            I stumbled upon Devine by accident and immediately knew this would
+            be the school for me. <em>Devine balances all the areas I wanted to
+            study further: the creative the logical and the human.</em> In my third
+            year at the Devine I got the change to spend a semester at <em> Hanyang
+            in south-Korea.</em>
+          </p>
+          <p class="education__p">
+            When I was twelve I started going to the Sint-Lucas Academie, an art
+            academy in Gent. After seven years in the kids program I started the two year initian course. I completed the initiation course and got
+            the degree when I was 19.
+          </p>
         </div>
       </section>
     </article>
