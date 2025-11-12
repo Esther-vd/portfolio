@@ -1,5 +1,5 @@
 ---
-title: "My Art Through the Ages"
+title: "The Evolution of My Art"
 date: "Dec 2024"
 cause: "Devine - Creative Code"
 heroUrl: "../../assets/img/digital/artages/hero.png"

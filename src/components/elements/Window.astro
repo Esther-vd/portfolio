@@ -1,7 +1,7 @@
 ---
 import { Picture } from "astro:assets";
 import WindowTopbar from "./WindowTopbar.astro";
-const { title, img, link, linkWidth, linkHeight, website, extraClass } =
+const { title, img, link, linkWidth, linkHeight, website, extraClass, text } =
   Astro.props;
 ---
 
@@ -14,6 +14,7 @@ const { title, img, link, linkWidth, linkHeight, website, extraClass } =
     box-shadow: var(--shadow);
     border-radius: 0.40363rem 0.40363rem 0.4375rem 0.625rem;
     cursor: url("../../assets/svg/cursor-retro.svg"), auto;
+    background-color: #fff;
   }
 
   .window--website {
@@ -48,6 +49,10 @@ const { title, img, link, linkWidth, linkHeight, website, extraClass } =
     width: 100%;
   }
 
+  .window__text {
+    margin: 2rem;
+  }
+
   @media only screen and (min-width: 40em) {
     /* window styles */
     .window--website {
@@ -68,6 +73,7 @@ const { title, img, link, linkWidth, linkHeight, website, extraClass } =
   class=`window ${website ? "window--website" : ""} ${extraClass ? extraClass : "" }`
 >
   <WindowTopbar title={title} />
+  {text && <p class="window__text">{text}</p>}
   <div
     class=`window__container__img  ${website ? "window__container__img--website" : ""}`
   >
