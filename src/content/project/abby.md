@@ -79,7 +79,7 @@ For development, I supported our Lead developer wherever possible. Together, we 
 
 ![This is an image](../../assets/img/digital/abby/stack.png)
 
-ART - portfolio
+Abby - abbymomenten
 
 </div>
 
