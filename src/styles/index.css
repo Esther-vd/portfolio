@@ -37,8 +37,8 @@
 }
 
 .header__icon__file{
- display: none;
- 
+ opacity: 0;
+ z-index: -2;
 }
 
 .header__icon__folder, .header__icon__file{
