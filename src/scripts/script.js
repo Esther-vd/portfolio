@@ -121,7 +121,7 @@ let headerIconTl =  gsap.timeline({
           .to(".header__icon__folder", { opacity: 0, duration: 0 })
           .to(".header__icon__file", { opacity: 1, duration: 0 })
           .from(".header__icon__file", { scale: .9, duration: 0.2 })
-          .to(".header__icon__file", { y: -10, duration: 0.2 }, "<")
+          .to(".header__icon__file", { y: -10, duration: 0.1 }, "<")
           .to(".header__icon__file", { y: 10, duration: 0.2 });
 
         document.querySelector(
