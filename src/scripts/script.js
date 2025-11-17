@@ -28,8 +28,11 @@ import DrawSVGPlugin from "gsap/DrawSVGPlugin";
 
 const gsapCode = () => {
   gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin, TextPlugin);
-  gsapIndex();
+  if (document.querySelector(".index")){
+    gsapIndex();
+  }
   folderGsap();
+  windowLinkGsap();
 };
 
 const gsapIndex = () => {
@@ -91,7 +94,7 @@ const folderHandler = (element) => {
 
 const folderReverseHandler = (element) => {
   let folderAnimation = gsap.timeline({});
-  
+
   folderAnimation
     .to(element, {
       rotation: 3,
@@ -104,11 +107,43 @@ const folderReverseHandler = (element) => {
     });
 };
 
+const windowLinkGsap = () => {
+  document
+    .querySelectorAll(".project__item")
+    .forEach((element) =>
+      element.addEventListener("mouseenter", () => windowHandler(element))
+    );
+
+  document
+    .querySelectorAll(".project__item")
+    .forEach((element) =>
+      element.addEventListener("mouseleave", () =>
+        windowReverseHandler(element)
+      )
+    );
+};
+
+const windowHandler = (element) => {
+  let windowAnimation = gsap.timeline({});
+
+  windowAnimation.to(element, {
+    scale: 0.95,
+    duration: 0.3,
+  });
+};
+
+const windowReverseHandler = (element) => {
+  let windowAnimation = gsap.timeline({});
+
+  windowAnimation.to(element, {
+    scale: 1,
+    duration: 0.3,
+  });
+};
 
 // click event
 const headerClickEvent = () => {
-let headerIconTl =  gsap.timeline({
-})
+  let headerIconTl = gsap.timeline({});
   if (document.querySelector(".header__icon__folder")) {
     document
       .querySelector(".header__icon__folder")
@@ -120,7 +155,7 @@ let headerIconTl =  gsap.timeline({
           .to(".header__icon__folder .folder__svg", { y: 20, duration: 0.2 })
           .to(".header__icon__folder", { opacity: 0, duration: 0 })
           .to(".header__icon__file", { opacity: 1, duration: 0 })
-          .from(".header__icon__file", { scale: .9, duration: 0.2 })
+          .from(".header__icon__file", { scale: 0.9, duration: 0.2 })
           .to(".header__icon__file", { y: -10, duration: 0.1 }, "<")
           .to(".header__icon__file", { y: 10, duration: 0.2 });
 
@@ -130,7 +165,6 @@ let headerIconTl =  gsap.timeline({
       });
   }
 };
-
 
 const init = () => {
   window.addEventListener("resize", updateScaleFactor);
