@@ -23,11 +23,10 @@ const hamburger = () => {
 //gsap
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import TextPlugin from "gsap/TextPlugin";
 import DrawSVGPlugin from "gsap/DrawSVGPlugin";
 
 const gsapCode = () => {
-  gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin, TextPlugin);
+  gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin);
   if (document.querySelector(".index")){
     gsapIndex();
   }
@@ -37,6 +36,7 @@ const gsapCode = () => {
 
 const gsapIndex = () => {
   ScribblesGsap();
+  RepeatWindowGsap();
 };
 
 const ScribblesGsap = () => {
@@ -140,6 +140,38 @@ const windowReverseHandler = (element) => {
     duration: 0.3,
   });
 };
+
+const RepeatWindowGsap = () => {
+   const repeatWindowTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".window__repeat__container",
+        start: "top 80%",
+        end: "top 20%",
+        toggleActions: "play none reverse none",
+        scrub: 0,
+        markers: true
+      },
+    });
+
+    repeatWindowTl
+      .from(".window__repeat:nth-child(4)", {
+        scale: 0,
+        duration: 0.3,
+      })
+      .from(".window__repeat:nth-child(3)", {
+        scale: 0,
+        duration: 0.3,
+      })
+      .from(".window__repeat:nth-child(2)", {
+        scale: 0,
+        duration: 0.3,
+      })
+      .from(".window__repeat:nth-child(1)", {
+        scale: 0,
+        duration: 0.3,
+      })
+    ;
+}
 
 // click event
 const headerClickEvent = () => {
