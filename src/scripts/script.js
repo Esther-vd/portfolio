@@ -149,7 +149,6 @@ const RepeatWindowGsap = () => {
         end: "top 20%",
         toggleActions: "play none reverse none",
         scrub: 0,
-        markers: true
       },
     });
 
